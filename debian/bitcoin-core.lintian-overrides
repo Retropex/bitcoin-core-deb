@@ -1,0 +1,13 @@
+# False positive
+bitcoin-core: hardening-no-fortify-functions [usr/bin/bitcoin-cli]
+bitcoin-core: spelling-error-in-binary
+
+# False positive, these templates are used dynamically in a function.
+bitcoin-core: unused-debconf-template bitcoin-core/*-fail [templates:*]
+
+# Not putting a period is weird in this context.
+bitcoin-core: malformed-title-in-templates bitcoin-core/*-wrong [templates:*]
+bitcoin-core: malformed-title-in-templates bitcoin-core/prune-fail [templates:54]
+
+# doesn't intend to be uploaded
+bitcoin-core: initial-upload-closes-no-bugs [usr/share/doc/bitcoin-core/changelog.Debian.gz:1]

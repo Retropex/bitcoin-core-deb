@@ -1,0 +1,16 @@
+Description: Add blockmaxweight in bitcoin.conf
+Author: Léo Haf <leo@haf.ovh>
+Forwarded: not-needed
+Last-Update: 2026-08-14
+--- a/share/examples/bitcoin.conf
++++ b/share/examples/bitcoin.conf
+@@ -619,6 +619,9 @@
+ # affects mining RPC clients, not IPC clients. (default: 8000).
+ #blockreservedweight=<n>
+ 
++# Set maximum BIP141 block weight (default: 1200000)
++#blockmaxweight=<n>
++
+ 
+ ### RPC server options
+

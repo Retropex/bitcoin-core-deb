@@ -1,0 +1,423 @@
+# Catalan translation of bitcoin-core' debconf messages
+# Copyright © 2026 poc senderi <pocsenderi@protonmail.com>
+# This file is distributed under the same license as the bitcoin-core package.
+# poc senderi <pocsenderi@protonmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: bitcoin-core\n"
+"Report-Msgid-Bugs-To: bitcoin-core@packages.debian.org\n"
+"POT-Creation-Date: 2026-08-14 18:22+0200\n"
+"PO-Revision-Date: 2026-06-04 16:50+0100\n"
+"Last-Translator: poc senderi <pocsenderi@protonmail.com>\n"
+"Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:1001
+msgid "Do you want to enable pruning?"
+msgstr "Voleu activar la poda («pruning»)?"
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:1001
+msgid ""
+"Save storage space by pruning (deleting) old blocks  and keeping only a "
+"limited copy of the blockchain."
+msgstr ""
+"Es pot estalviar espai podant (esborrant) blocs antics i conservant només "
+"una còpia limitada de la cadena de blocs («blockchain»)."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:2001
+msgid "Value for pruning (must be at least 550 or 0/1) in MiB:"
+msgstr "El valor de «prune» (ha de ser com a mínim 550 o bé 0 o 1) en MiB:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:2001
+msgid ""
+"0 = disabled, 1 = allow manual pruning via RPC,  >=550 = automatically prune "
+"block files to stay under the target size in MiB."
+msgstr ""
+"0: desactivat, 1: permet la poda manual via RPC, >=550: poda automàticament "
+"els fitxers de blocs per romandre per sota de la mida desitjada en MiB."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:3001
+msgid "Couldn't configure prune."
+msgstr "No s'ha pogut configurar «prune»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:3001
+msgid ""
+"Couldn't configure the prune setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «prune» com s'esperava. Establiu-ne "
+"manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:4001
+msgid "Bad value for prune."
+msgstr "El valor de «prune» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:4001
+msgid "Prune must be 0, 1 or superior or equal to 550."
+msgstr "«prune» ha de ser 0 o bé 1 o bé més gran o igual que 550."
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:5001
+msgid "Do you want to enable transaction index?"
+msgstr "Voleu activar l'índex de transacció?"
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:5001
+msgid "This is required for electrum servers and various other software."
+msgstr ""
+"Això és requerit per als servidors «electrum» i algun altre programari."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:6001
+msgid "Couldn't configure txindex."
+msgstr "No s'ha pogut configurar «txindex»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:6001
+msgid ""
+"Couldn't configure the txindex setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «txindex» com s'esperava. Establiu-ne "
+"manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:7001
+msgid "Value for dbcache (must be at least 4) in MiB:"
+msgstr "El valor per a «dbcache» (ha de ser com a mínim 4) en MiB:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:7001
+msgid ""
+"A larger cache can speed up the initial synchronization of your Bitcoin "
+"node,   but after the initial sync is complete, a larger cache value does "
+"not  significantly improve performance and may use more RAM than needed."
+msgstr ""
+"Una memòria cau més gran accelera la sincronització inicial del vostre node "
+"Bitcoin, però un cop la sincronització inicial ha acabat, un valor gran de "
+"cau no millora significativament el rendiment i pot usar més RAM de la "
+"necessària."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:8001
+msgid "Couldn't configure dbcache."
+msgstr "No s'ha pogut configurar «dbcache»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:8001
+msgid ""
+"Couldn't configure the dbcache setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «dbcache» com s'esperava. Establiu-ne "
+"manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:9001
+msgid "Bad value for dbcache."
+msgstr "El valor de «dbcache» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:9001
+msgid "dbcache must be superior or equal to 4."
+msgstr "«dbcache» ha de ser igual o més gran que 4."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:10001
+msgid "bitcoin.conf file missing, unable to interactively configure bitcoind."
+msgstr ""
+"El fitxer «bitcoin.conf» no hi és. No es pot configurar el «bitcoind» de "
+"manera interactiva."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:10001
+msgid ""
+"The file /etc/bitcoin/bitcoin.conf is missing, debconf expect this file to  "
+"interactively configure bitcoind."
+msgstr ""
+"El fitxer «/etc/bitcoin/bitcoin.conf» no hi és. El «debconf» necessita "
+"aquest fitxer per a configurar interactivament el «bitcoind»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:11001
+msgid "Value for rpcthreads (must be superior or equal to 0):"
+msgstr "Valor per a «rpcthreads» (ha de ser més gran o igual que 0):"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:11001
+msgid "Set the number of threads to service RPC calls."
+msgstr ""
+"Establiu el nombre de fils («threads») per a donar servei a les crides RPC."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:12001
+msgid "Bad value for rpcthreads."
+msgstr "El valor de «rpcthreads» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:12001
+msgid "rpcthreads must be superior or equal to 0."
+msgstr "«rpcthreads» ha de ser més gran o igual que 0."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:13001
+msgid "Couldn't configure rpcthreads."
+msgstr "No s'ha pogut configurar «rpcthreads»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:13001
+msgid ""
+"Couldn't configure the rpcthreads setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «rpcthreads» com s'esperava. Establiu-"
+"ne manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:14001
+msgid "Value for rpcworkqueue (must be superior or equal to 0):"
+msgstr "Valor per a «rpcworkqueue» (ha de ser més gran o igual que 0):"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:14001
+msgid "Set the maximum depth of the work queue to service RPC calls."
+msgstr ""
+"Establiu la llargada màxima de la cua de treball per a donar servei a les "
+"crides RPC."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:15001
+msgid "Bad value for rpcworkqueue."
+msgstr "El valor de «rpcworkqueue» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:15001
+msgid "rpcworkqueue must be superior or equal to 0."
+msgstr "«rpcworkqueue» ha de ser més gran o igual que 0."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:16001
+msgid "Couldn't configure rpcworkqueue."
+msgstr "No s'ha pogut configurar «rpcworkqueue»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:16001
+msgid ""
+"Couldn't configure the rpcworkqueue setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «rpcworkqueue» com s'esperava. "
+"Establiu-ne manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:17001
+msgid "Value for blockmaxweight:"
+msgstr "Valor per a «blockmaxweight»:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:17001
+msgid "Set maximum BIP141 block weight."
+msgstr "Establiu el pes màxim del bloc BIP141."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:18001
+msgid "Bad value for blockmaxweight."
+msgstr "El valor de «blockmaxweight» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:18001
+msgid "blockmaxweight must be between 0 and 3985000."
+msgstr "«blockmaxweight» ha d'estar entre 0 i 3985000."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:19001
+msgid "Couldn't configure blockmaxweight."
+msgstr "No s'ha pogut configurar «blockmaxweight»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:19001
+msgid ""
+"Couldn't configure the blockmaxweight setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «blockmaxweight» com s'esperava. "
+"Establiu-ne manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:20001
+msgid "Value for maxmempool:"
+msgstr "Valor per a «maxmempool»:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:20001
+msgid "Keep the transaction memory pool below <n> megabytes."
+msgstr ""
+"Manté el dipòsit de la memòria de transaccions per sota dels <n> megabytes."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:21001
+msgid "Bad value for maxmempool."
+msgstr "El valor de «maxmempool» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:21001
+msgid "maxmempool must be superior or equal to 5."
+msgstr "«maxmempool» ha de ser més gran o igual que 5."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:22001
+msgid "Couldn't configure maxmempool"
+msgstr "No s'ha pogut configurar «maxmempool»"
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:22001
+msgid ""
+"Couldn't configure the maxmempool setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «maxmempool» com s'esperava. Establiu-"
+"ne manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:23001
+msgid "Value for blockreconstructionextratxn:"
+msgstr "Valor per a «blockreconstructionextratxn»:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:23001
+msgid "Extra transactions to keep in memory for compact block reconstructions."
+msgstr ""
+"Transaccions addicionals que cal mantenir a memòria per a la reconstrucció "
+"de blocs compactes."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:24001
+msgid "Bad value for blockreconstructionextratxn."
+msgstr "El valor de «blockreconstructionextratxn» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:24001
+msgid "blockreconstructionextratxn must be superior or equal to 0."
+msgstr "«blockreconstructionextratxn» ha de ser més gran o igual que 0."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:25001
+msgid "Couldn't configure blockreconstructionextratxn."
+msgstr "No s'ha pogut configurar «blockreconstructionextratxn»."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:25001
+msgid ""
+"Couldn't configure the blockreconstructionextratxn setting as expected,  "
+"please set your value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «blockreconstructionextratxn» com "
+"s'esperava. Establiu-ne manualment el valor al fitxer «/etc/bitcoin/"
+"bitcoin.conf»."
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:26001
+msgid "Value for datacarriersize:"
+msgstr "Valor per a «datacarriersize»:"
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:26001
+msgid ""
+"Maximum size of data in data carrier transactions to relay and mine, in "
+"bytes."
+msgstr ""
+"Mida màxima de dades en les transaccions amb portador de dades per "
+"retransmetre i minar, en bytes."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:27001
+msgid "Bad value for datacarriersize."
+msgstr "El valor de «datacarriersize» no és vàlid."
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:27001
+msgid "datacarriersize must be superior or equal to 0."
+msgstr "«datacarriersize» ha de ser més gran o igual que 0."
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:28001
+msgid "Couldn't configure datacarriersize"
+msgstr "No s'ha pogut configurar «datacarriersize»"
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:28001
+msgid ""
+"Couldn't configure the datacarriersize setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+"No s'ha pogut configurar el paràmetre «datacarriersize» com s'esperava. "
+"Establiu-ne manualment el valor al fitxer «/etc/bitcoin/bitcoin.conf»."

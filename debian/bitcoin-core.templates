@@ -1,0 +1,162 @@
+Template: bitcoin-core/prune-bool
+Type: boolean
+Default: false
+_Description: Do you want to enable pruning?
+ Save storage space by pruning (deleting) old blocks 
+ and keeping only a limited copy of the blockchain.
+
+Template: bitcoin-core/prune
+Type: string
+_Description: Value for pruning (must be at least 550 or 0/1) in MiB:
+ 0 = disabled, 1 = allow manual pruning via RPC, 
+ >=550 = automatically prune block files to stay under the target size in MiB.
+
+Template: bitcoin-core/prune-bool-fail
+Type: error
+_Description: Couldn't configure prune.
+ Couldn't configure the prune setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/prune-fail
+Type: note
+_Description: Bad value for prune.
+ Prune must be 0, 1 or superior or equal to 550.
+
+Template: bitcoin-core/txindex
+Type: boolean
+Default: false
+_Description: Do you want to enable transaction index?
+ This is required for electrum servers and various other software.
+
+Template: bitcoin-core/txindex-fail
+Type: error
+_Description: Couldn't configure txindex.
+ Couldn't configure the txindex setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/dbcache
+Type: string
+Default: 450
+_Description: Value for dbcache (must be at least 4) in MiB:
+ A larger cache can speed up the initial synchronization of your Bitcoin node,  
+ but after the initial sync is complete, a larger cache value does not 
+ significantly improve performance and may use more RAM than needed.
+
+Template: bitcoin-core/dbcache-fail
+Type: error
+_Description: Couldn't configure dbcache.
+ Couldn't configure the dbcache setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/dbcache-wrong
+Type: note
+_Description: Bad value for dbcache.
+ dbcache must be superior or equal to 4.
+
+Template: bitcoin-core/bitcoinconf
+Type: error
+_Description: bitcoin.conf file missing, unable to interactively configure bitcoind.
+ The file /etc/bitcoin/bitcoin.conf is missing, debconf expect this file to 
+ interactively configure bitcoind.
+
+Template: bitcoin-core/rpcthreads
+Type: string
+Default: 64
+_Description: Value for rpcthreads (must be superior or equal to 0):
+ Set the number of threads to service RPC calls.
+
+Template: bitcoin-core/rpcthreads-wrong
+Type: note
+_Description: Bad value for rpcthreads.
+ rpcthreads must be superior or equal to 0.
+
+Template: bitcoin-core/rpcthreads-fail
+Type: error
+_Description: Couldn't configure rpcthreads.
+ Couldn't configure the rpcthreads setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/rpcworkqueue
+Type: string
+Default: 64
+_Description: Value for rpcworkqueue (must be superior or equal to 0):
+ Set the maximum depth of the work queue to service RPC calls.
+
+Template: bitcoin-core/rpcworkqueue-wrong
+Type: note
+_Description: Bad value for rpcworkqueue.
+ rpcworkqueue must be superior or equal to 0.
+
+Template: bitcoin-core/rpcworkqueue-fail
+Type: error
+_Description: Couldn't configure rpcworkqueue.
+ Couldn't configure the rpcworkqueue setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/blockmaxweight
+Type: string
+Default: 3985000
+_Description: Value for blockmaxweight:
+ Set maximum BIP141 block weight.
+
+Template: bitcoin-core/blockmaxweight-wrong
+Type: note
+_Description: Bad value for blockmaxweight.
+ blockmaxweight must be between 0 and 3985000.
+
+Template: bitcoin-core/blockmaxweight-fail
+Type: error
+_Description: Couldn't configure blockmaxweight.
+ Couldn't configure the blockmaxweight setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/maxmempool
+Type: string
+Default: 1000
+_Description: Value for maxmempool:
+ Keep the transaction memory pool below <n> megabytes.
+
+Template: bitcoin-core/maxmempool-wrong
+Type: note
+_Description: Bad value for maxmempool.
+ maxmempool must be superior or equal to 5.
+
+Template: bitcoin-core/maxmempool-fail
+Type: error
+_Description: Couldn't configure maxmempool
+ Couldn't configure the maxmempool setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/blockreconstructionextratxn
+Type: string
+Default: 1000000
+_Description: Value for blockreconstructionextratxn:
+ Extra transactions to keep in memory for compact block reconstructions.
+
+Template: bitcoin-core/blockreconstructionextratxn-wrong
+Type: note
+_Description: Bad value for blockreconstructionextratxn.
+ blockreconstructionextratxn must be superior or equal to 0.
+
+Template: bitcoin-core/blockreconstructionextratxn-fail
+Type: error
+_Description: Couldn't configure blockreconstructionextratxn.
+ Couldn't configure the blockreconstructionextratxn setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.
+
+Template: bitcoin-core/datacarriersize
+Type: string
+Default: 42
+_Description: Value for datacarriersize:
+ Maximum size of data in data carrier transactions to relay and mine, in bytes.
+
+Template: bitcoin-core/datacarriersize-wrong
+Type: note
+_Description: Bad value for datacarriersize.
+ datacarriersize must be superior or equal to 0.
+
+Template: bitcoin-core/datacarriersize-fail
+Type: error
+_Description: Couldn't configure datacarriersize
+ Couldn't configure the datacarriersize setting as expected, 
+ please set your value manually in the /etc/bitcoin/bitcoin.conf file.

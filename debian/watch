@@ -1,0 +1,4 @@
+Version: 5
+
+Source: https://github.com/bitcoin/bitcoin/tags
+Matching-Pattern: .*/v?(?!.*-release-notes)(?!.*rc\d+@ARCHIVE_EXT@)(\d.*)@ARCHIVE_EXT@

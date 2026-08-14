@@ -1,0 +1,6 @@
+# Those libs will be deprecated in a future release and are not very used among developers.
+usr/lib/*
+usr/include/*
+# Deleting test binaries.
+usr/libexec/test_bitcoin
+usr/libexec/test_bitcoin-qt

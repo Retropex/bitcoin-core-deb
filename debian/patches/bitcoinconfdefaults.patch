@@ -1,0 +1,24 @@
+Description: Custom defaults for debian package
+Author: Léo Haf <leo@haf.ovh>
+Forwarded: not-needed
+Last-Update: 2026-08-14
+--- a/share/examples/bitcoin.conf
++++ b/share/examples/bitcoin.conf
+@@ -76,7 +76,7 @@
+ #daemonwait=1
+ 
+ # Specify data directory
+-#datadir=<dir>
++datadir=/var/lib/bitcoin/
+ 
+ # Maximum database cache size <n> MiB (minimum 4, default: 1024). Make
+ # sure you have enough RAM. In addition, unused memory allocated to
+@@ -686,7 +686,7 @@
+ #rpcwhitelistdefault=1
+ 
+ # Accept command line and JSON-RPC commands
+-#server=1
++server=1
+ 
+ 
+ # [Sections]

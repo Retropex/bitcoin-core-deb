@@ -1,0 +1,103 @@
+#!/bin/sh
+
+set -e
+
+# Source debconf library
+. /usr/share/debconf/confmodule
+
+disable_txindex () {
+  if grep -s -q -E '^#?txindex=' /etc/bitcoin/bitcoin.conf; then
+    sed -i -E "/^#?txindex=/c\txindex=0" /etc/bitcoin/bitcoin.conf
+  else
+    db_input high bitcoin-core/txindex-fail || true
+    db_go || true
+  fi
+}
+
+update_conf_param () {
+  local param="$1"
+  db_get "bitcoin-core/$param" || RET=
+  if [ "$RET" ]; then
+    if grep -s -q -E "^#?${param}=" /etc/bitcoin/bitcoin.conf; then
+      sed -i -E "/^#?${param}=/c\\${param}=$RET" /etc/bitcoin/bitcoin.conf
+    else
+      db_input high "bitcoin-core/${param}-fail" || true
+      db_go || true
+    fi
+  fi
+  unset RET
+}
+
+case "$1" in
+  configure|reconfigure)
+  
+  # Ensure systemd-networkd-wait-online.service is enabled for bitcoind interface binding.
+  if command -v deb-systemd-helper > /dev/null; then
+    deb-systemd-helper enable systemd-networkd-wait-online.service >/dev/null || true
+  fi
+
+  # begin-remove-after: released:forky
+  dpkg-statoverride --remove /etc/bitcoin/bitcoin.conf 2>/dev/null || true
+  dpkg-statoverride --remove /var/lib/bitcoin 2>/dev/null || true
+  # end-remove-after
+  
+  if [ -f /etc/bitcoin/bitcoin.conf ]; then
+    db_get bitcoin-core/prune-bool || RET=
+    if [ "$RET" = "true" ]; then
+      db_get bitcoin-core/prune || RET=
+      if [ "$RET" ]; then
+        disable_txindex
+        if grep -s -q -E '^#?prune=' /etc/bitcoin/bitcoin.conf; then
+          sed -i -E "/^#?prune=/c\prune=$RET" /etc/bitcoin/bitcoin.conf
+        else
+          db_input high bitcoin-core/prune-bool-fail || true
+          db_go || true
+        fi
+      fi
+      unset RET
+    elif [ "$RET" = "false" ]; then
+      if grep -s -q -E '^#?prune=' /etc/bitcoin/bitcoin.conf; then
+        sed -i -E "/^#?prune=/c\prune=0" /etc/bitcoin/bitcoin.conf
+      else
+        db_input high bitcoin-core/prune-bool-fail || true
+        db_go || true
+      fi
+    fi
+    unset RET
+    
+    db_get bitcoin-core/prune-bool || RET=
+    if [ "$RET" = "false" ]; then
+      db_get bitcoin-core/txindex || RET=
+      if [ "$RET" = "true" ]; then
+        if grep -s -q -E '^#?txindex=' /etc/bitcoin/bitcoin.conf; then
+          sed -i -E "/^#?txindex=/c\txindex=1" /etc/bitcoin/bitcoin.conf
+        else
+          db_input high bitcoin-core/txindex-fail || true
+          db_go || true
+        fi
+      elif [ "$RET" = "false" ]; then
+        disable_txindex
+      fi
+    fi
+    unset RET
+    
+    update_conf_param datacarriersize
+    update_conf_param dbcache
+    update_conf_param rpcthreads
+    update_conf_param rpcworkqueue
+    update_conf_param blockmaxweight
+    update_conf_param maxmempool
+    update_conf_param blockreconstructionextratxn
+  else
+    db_input high bitcoin-core/bitcoinconf || true
+    db_go || true
+    exit 1
+  fi
+  
+  db_stop
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

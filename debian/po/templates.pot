@@ -1,0 +1,383 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the bitcoin-core package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: bitcoin-core\n"
+"Report-Msgid-Bugs-To: bitcoin-core@packages.debian.org\n"
+"POT-Creation-Date: 2026-08-14 18:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:1001
+msgid "Do you want to enable pruning?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:1001
+msgid ""
+"Save storage space by pruning (deleting) old blocks  and keeping only a "
+"limited copy of the blockchain."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:2001
+msgid "Value for pruning (must be at least 550 or 0/1) in MiB:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:2001
+msgid ""
+"0 = disabled, 1 = allow manual pruning via RPC,  >=550 = automatically prune "
+"block files to stay under the target size in MiB."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:3001
+msgid "Couldn't configure prune."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:3001
+msgid ""
+"Couldn't configure the prune setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:4001
+msgid "Bad value for prune."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:4001
+msgid "Prune must be 0, 1 or superior or equal to 550."
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:5001
+msgid "Do you want to enable transaction index?"
+msgstr ""
+
+#. Type: boolean
+#. Description
+#: ../bitcoin-core.templates:5001
+msgid "This is required for electrum servers and various other software."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:6001
+msgid "Couldn't configure txindex."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:6001
+msgid ""
+"Couldn't configure the txindex setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:7001
+msgid "Value for dbcache (must be at least 4) in MiB:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:7001
+msgid ""
+"A larger cache can speed up the initial synchronization of your Bitcoin "
+"node,   but after the initial sync is complete, a larger cache value does "
+"not  significantly improve performance and may use more RAM than needed."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:8001
+msgid "Couldn't configure dbcache."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:8001
+msgid ""
+"Couldn't configure the dbcache setting as expected,  please set your value "
+"manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:9001
+msgid "Bad value for dbcache."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:9001
+msgid "dbcache must be superior or equal to 4."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:10001
+msgid "bitcoin.conf file missing, unable to interactively configure bitcoind."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:10001
+msgid ""
+"The file /etc/bitcoin/bitcoin.conf is missing, debconf expect this file to  "
+"interactively configure bitcoind."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:11001
+msgid "Value for rpcthreads (must be superior or equal to 0):"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:11001
+msgid "Set the number of threads to service RPC calls."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:12001
+msgid "Bad value for rpcthreads."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:12001
+msgid "rpcthreads must be superior or equal to 0."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:13001
+msgid "Couldn't configure rpcthreads."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:13001
+msgid ""
+"Couldn't configure the rpcthreads setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:14001
+msgid "Value for rpcworkqueue (must be superior or equal to 0):"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:14001
+msgid "Set the maximum depth of the work queue to service RPC calls."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:15001
+msgid "Bad value for rpcworkqueue."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:15001
+msgid "rpcworkqueue must be superior or equal to 0."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:16001
+msgid "Couldn't configure rpcworkqueue."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:16001
+msgid ""
+"Couldn't configure the rpcworkqueue setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:17001
+msgid "Value for blockmaxweight:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:17001
+msgid "Set maximum BIP141 block weight."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:18001
+msgid "Bad value for blockmaxweight."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:18001
+msgid "blockmaxweight must be between 0 and 3985000."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:19001
+msgid "Couldn't configure blockmaxweight."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:19001
+msgid ""
+"Couldn't configure the blockmaxweight setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:20001
+msgid "Value for maxmempool:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:20001
+msgid "Keep the transaction memory pool below <n> megabytes."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:21001
+msgid "Bad value for maxmempool."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:21001
+msgid "maxmempool must be superior or equal to 5."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:22001
+msgid "Couldn't configure maxmempool"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:22001
+msgid ""
+"Couldn't configure the maxmempool setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:23001
+msgid "Value for blockreconstructionextratxn:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:23001
+msgid "Extra transactions to keep in memory for compact block reconstructions."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:24001
+msgid "Bad value for blockreconstructionextratxn."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:24001
+msgid "blockreconstructionextratxn must be superior or equal to 0."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:25001
+msgid "Couldn't configure blockreconstructionextratxn."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:25001
+msgid ""
+"Couldn't configure the blockreconstructionextratxn setting as expected,  "
+"please set your value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:26001
+msgid "Value for datacarriersize:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../bitcoin-core.templates:26001
+msgid ""
+"Maximum size of data in data carrier transactions to relay and mine, in "
+"bytes."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:27001
+msgid "Bad value for datacarriersize."
+msgstr ""
+
+#. Type: note
+#. Description
+#: ../bitcoin-core.templates:27001
+msgid "datacarriersize must be superior or equal to 0."
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:28001
+msgid "Couldn't configure datacarriersize"
+msgstr ""
+
+#. Type: error
+#. Description
+#: ../bitcoin-core.templates:28001
+msgid ""
+"Couldn't configure the datacarriersize setting as expected,  please set your "
+"value manually in the /etc/bitcoin/bitcoin.conf file."
+msgstr ""
