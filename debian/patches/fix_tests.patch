@@ -1,0 +1,40 @@
+Description: The tests are designed to be run after the build and before
+ installation.  To accomplish this, they are designed to look for the binary
+ with a hard path starting at / and ending in src/ inside the build directory.
+ This patch simply calls the name of the binary (bitcoind, bitcoin-cli, etc.),
+ which can be found in /usr/bin when the binary package is installed.  It also
+ logs the test output to stdout instead of stderr.  Actual errors are still
+ detected as such by autopkgtest.
+Author: Soren Stoutner <soren@debian.org>
+        Léo Haf <leo@haf.ovh>
+Forwarded: not-needed
+Last-Update: 2026-08-17
+--- a/test/functional/test_runner.py
++++ b/test/functional/test_runner.py
+@@ -448,7 +448,8 @@ def main():
+ 
+     # Set up logging
+     logging_level = logging.INFO if args.quiet else logging.DEBUG
+-    logging.basicConfig(format='%(message)s', level=logging_level)
++    # Log to stdout instead of stderr.  Otherwise, the successful test output is interpreted as an error by autopkgtest.
++    logging.basicConfig(stream=sys.stdout, format='%(message)s', level=logging_level)
+ 
+     # Create base test directory
+     tmpdir = "%s/test_runner_₿_🏃_%s" % (args.tmpdirprefix, datetime.datetime.now().strftime("%Y%m%d_%H%M%S"))
+--- a/test/functional/test_framework/util.py
++++ b/test/functional/test_framework/util.py
+@@ -331,11 +331,9 @@ def get_binary_paths(config):
+     # Set paths to bitcoin core binaries allowing overrides with environment
+     # variables.
+     for binary, env_variable_name in binaries.items():
+-        default_filename = os.path.join(
+-            config["environment"]["BUILDDIR"],
+-            "bin",
+-            binary + config["environment"]["EXEEXT"],
+-        )
++        # Call the binaries by name so they are found on PATH (e.g. /usr/bin)
++        # when the package is installed, as required by autopkgtest.
++        default_filename = binary + config["environment"]["EXEEXT"]
+         setattr(paths, env_variable_name.lower(), os.getenv(env_variable_name, default=default_filename))
+     # BITCOIN_CMD environment variable can be specified to invoke bitcoin
+     # wrapper binary instead of other executables.

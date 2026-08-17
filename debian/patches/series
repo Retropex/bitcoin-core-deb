@@ -2,3 +2,4 @@ bitcoinconfdefaults.patch
 descriptive_man.patch
 debugoptions.patch
 blockmaxweight.patch
+fix_tests.patch

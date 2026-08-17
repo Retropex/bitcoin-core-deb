@@ -4,7 +4,3 @@ Architecture: amd64 arm64 i386 ppc64el s390x
 Depends: @,
          python3-zmq
 Restrictions: needs-root
-
-Tests: util
-Depends: @,
-         python3
