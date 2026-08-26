@@ -1,6 +1,7 @@
 Source: bitcoin-core
 Section: utils
 Maintainer: Léo Haf <leo@haf.ovh>
+Priority: optional
 Build-Depends: debhelper-compat (= 13),
  dh-sequence-installsysusers,
  cmake,
@@ -16,13 +17,14 @@ Build-Depends: debhelper-compat (= 13),
  qt6-tools-dev,
  libqrencode-dev,
  po-debconf
-Standards-Version: 4.7.4
+Standards-Version: 4.7.2
 Homepage: https://bitcoincore.org
 Vcs-Git: https://salsa.debian.org/cryptocoin-team/bitcoin-core.git
 Vcs-Browser: https://salsa.debian.org/cryptocoin-team/bitcoin-core
 
 Package: bitcoin-core
 Architecture: any
+Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  debconf
