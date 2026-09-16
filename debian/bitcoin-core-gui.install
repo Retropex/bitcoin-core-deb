@@ -1,4 +1,0 @@
-usr/bin/bitcoin-qt
-#Install the logo for desktop environment
-debian/bitcoin-core-gui.desktop usr/share/applications/
-debian/org.bitcoincore.bitcoin_core_gui.metainfo.xml usr/share/metainfo/

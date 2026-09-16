@@ -1,4 +1,4 @@
-bitcoin-core (31.1-1) trixie; urgency=medium
+bitcoin-core (31.1-1~resolute1) resolute; urgency=medium
 
   * Initial release.
 
