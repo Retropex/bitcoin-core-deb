@@ -3,7 +3,6 @@ Section: utils
 Maintainer: Léo Haf <leo@haf.ovh>
 Priority: optional
 Build-Depends: debhelper-compat (= 13),
- dh-sequence-installsysusers,
  cmake,
  pkgconf,
  python3,
@@ -19,9 +18,11 @@ Vcs-Browser: https://salsa.debian.org/cryptocoin-team/bitcoin-core
 
 Package: bitcoin-core
 Architecture: any
+# The postinst script requires adduser.
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
  ${shlibs:Depends},
+ adduser,
  debconf
 Description: enhanced Bitcoin node/wallet software
  Bitcoin Core is a Bitcoin client and it builds the
