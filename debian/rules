@@ -3,14 +3,6 @@
 # Uncomment to enable verbose debhelper logging.
 #export DH_VERBOSE = 1
 
-# Enable the default hardening flags.
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all,-fortify
-
-# Upstream uses -D_FORTIFY_SOURCE=3.  Debian default to =D_FORTIFY_SOURCE-2.
-# We don't want to downgrade the security since upstream has made sure their
-# code works with -D_FORTIFY_SOURCE=3.
-export DEB_CPPFLAGS_MAINT_APPEND = -D_FORTIFY_SOURCE=3
-
 # Ensure -fstack-clash-protection is used on all architectures.
 # Enable -fcf-protection only on amd64, as it's the only architecture
 # that supports it.
