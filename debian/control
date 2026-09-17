@@ -19,7 +19,7 @@ Vcs-Browser: https://salsa.debian.org/cryptocoin-team/bitcoin-core
 Package: bitcoin-core
 Architecture: any
 # The postinst script requires adduser.
-Pre-Depends: ${misc:Pre-Depends}
+Pre-Depends: ${misc:Pre-Depends}, init-system-helpers (>= 1.54~)
 Depends: ${misc:Depends},
  ${shlibs:Depends},
  adduser,
