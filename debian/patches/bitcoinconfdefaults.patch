@@ -1,10 +1,10 @@
 Description: Custom defaults for debian package
 Author: Léo Haf <leo@haf.ovh>
 Forwarded: not-needed
-Last-Update: 2026-08-14
+Last-Update: 2026-11-11
 --- a/share/examples/bitcoin.conf
 +++ b/share/examples/bitcoin.conf
-@@ -76,7 +76,7 @@
+@@ -77,7 +77,7 @@
  #daemonwait=1
  
  # Specify data directory
@@ -13,7 +13,16 @@ Last-Update: 2026-08-14
  
  # Maximum database cache size <n> MiB (minimum 4, default: 1024). Make
  # sure you have enough RAM. In addition, unused memory allocated to
-@@ -686,7 +686,7 @@
+@@ -257,7 +257,7 @@
+ #listen=1
+ 
+ # Automatically create Tor onion service (default: 1)
+-#listenonion=1
++listenonion=0
+ 
+ # Maintain at most <n> automatic connections to peers (default: 200,
+ # maximum: 2000). 11 slots of these are reserved for outgoing
+@@ -712,7 +712,7 @@
  #rpcwhitelistdefault=1
  
  # Accept command line and JSON-RPC commands
