@@ -1,5 +1,2 @@
 # False positive
 bitcoin-core-gui: spelling-error-in-binary
-
-# doesn't intend to be uploaded
-bitcoin-core-gui: initial-upload-closes-no-bugs [usr/share/doc/bitcoin-core-gui/changelog.Debian.gz:1]
